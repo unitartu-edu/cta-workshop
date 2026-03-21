@@ -1,6 +1,9 @@
 #include <SoftwareSerial.h>
 #include "HUSKYLENS.h"
 
+// Download HUSKYLENS library from https://github.com/HuskyLens/HUSKYLENSArduino/tree/master/HUSKYLENS
+// and put it into your Arduino/libraries folder
+
 SoftwareSerial huskySerial(2, 3);
 HUSKYLENS huskylens;
 
