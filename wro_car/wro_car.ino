@@ -60,7 +60,7 @@ void stop() {
 
 // This function only executes once.
 void setup() {
-  Serial.begin(9600);
+  //Serial.begin(9600);
   pinMode(R_TRIG, OUTPUT); pinMode(R_ECHO, INPUT);
   pinMode(L_TRIG, OUTPUT); pinMode(L_ECHO, INPUT);
   pinMode(MOTOR_A1A, OUTPUT);
@@ -68,7 +68,7 @@ void setup() {
 
   // Next line increases the PWM frequency to inaudible levels (~62.5kHz)
   // by setting timer2 prescaler to 1
-  TCCR2B = (TCCR2B & 0b11111000) | 0x01;
+  //TCCR2B = (TCCR2B & 0b11111000) | 0x01;
 
   steeringServo.attach(SERVO_PIN);
   steeringServo.write(SERVO_STRAIGHT);
@@ -79,7 +79,7 @@ void loop() {
   long distRight = getDistance(R_TRIG, R_ECHO);
   long distLeft  = getDistance(L_TRIG, L_ECHO);
 
-  /*
+  
   if (distLeft < THRESHOLD_CM) {
     steeringServo.write(SERVO_RIGHT);
   } else if (distRight < THRESHOLD_CM) {
@@ -87,14 +87,14 @@ void loop() {
   } else {
     steeringServo.write(SERVO_STRAIGHT);
   }
-  */
+  
 
   // Drive forward at ~30% PWM
-  //forward(MOTOR_SPEED);
+  forward(MOTOR_SPEED);
 
   delay(50);
 
-  Serial.print("Left: "); Serial.print(distLeft);
-  Serial.print(" cm, Right: "); Serial.print(distRight);
-  Serial.println(" cm");
+  //Serial.print("Left: "); Serial.print(distLeft);
+  //Serial.print(" cm, Right: "); Serial.print(distRight);
+  //Serial.println(" cm");
 }
