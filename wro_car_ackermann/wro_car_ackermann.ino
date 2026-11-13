@@ -1,5 +1,5 @@
 /*
- * WRO Car — Arduino
+ * WRO Car (Ackermann steering) — Arduino
  *
  * Ultrasonic sensors (HC-SR04)
  *   Right:  D2 Echo  |  D3 Trig
